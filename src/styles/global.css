@@ -1,0 +1,447 @@
+:root {
+  --color-bg-black: #040607;
+  --color-text-periwinkle: #E3D9FC;
+  --color-accent-magenta: #BF40FA;
+  --color-accent-blue: #4928C2;
+  --color-surface-purple: #5B2A62;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--color-bg-black);
+  color: var(--color-text-periwinkle);
+  font-family: system-ui, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Sticky Navigation Bar */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(4, 6, 7, 0.9);
+  backdrop-filter: blur(10px);
+  padding: 1rem 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--color-accent-blue);
+}
+
+.nav-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.nav-logo {
+  font-weight: bold;
+  color: var(--color-accent-magenta);
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.nav-links a {
+  color: var(--color-text-periwinkle);
+  text-decoration: none;
+  margin-left: 2rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover { color: var(--color-accent-magenta); }
+
+/* Main Container Layout */
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 100px 2rem 2rem 2rem;
+}
+
+section {
+  padding: 4rem 0;
+  min-height: 50vh;
+  border-bottom: 1px solid rgba(227, 217, 252, 0.1);
+}
+
+h2 {
+  color: var(--color-accent-magenta);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Hero (Home) Section */
+#home {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 80vh;
+  border-bottom: none;
+}
+
+.hero-content {
+  flex: 1;
+  padding-right: 2rem;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-content h1 span { color: var(--color-accent-magenta); }
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.image-wrapper {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 4px solid var(--color-accent-blue);
+  box-shadow: 0 0 20px rgba(73, 40, 194, 0.3);
+  overflow: hidden; /* This acts like a clipping mask so the image doesn't spill out */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  
+  /* Change this value to zoom! 
+     1.0 is normal size. 
+     1.2 zooms in by 20%. 
+     1.5 zooms in by 50%. 
+     0.8 zooms out by 20%. */
+  transform: scale(.8); 
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  background-color: var(--color-accent-magenta);
+  color: var(--color-bg-black);
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--color-accent-blue);
+  color: var(--color-text-periwinkle);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 2px solid var(--color-accent-magenta);
+  color: var(--color-text-periwinkle);
+  padding: calc(0.8rem - 2px) calc(1.5rem - 2px); /* Offsets the border thickness */
+}
+
+.btn-secondary:hover {
+  background-color: rgba(191, 64, 250, 0.1); /* Subtle magenta glow */
+  color: var(--color-accent-magenta);
+}
+
+/* Experience Section Styles */
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.experience-card {
+  background-color: rgba(91, 42, 98, 0.15);
+  border-left: 4px solid var(--color-accent-blue);
+  padding: 2rem;
+  border-radius: 0 8px 8px 0;
+}
+
+.experience-card h3 {
+  margin: 0 0 0.5rem 0;
+  color: var(--color-text-periwinkle);
+  font-size: 1.5rem;
+}
+
+.experience-card h3 span {
+  color: var(--color-accent-magenta);
+  font-size: 1.1rem;
+  font-weight: normal;
+}
+
+.experience-card .date-location {
+  color: #A094B8;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  display: block;
+  font-size: 0.9rem;
+}
+
+.experience-card ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.experience-card li {
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+}
+
+/* Project Section Styles */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background-color: rgba(91, 42, 98, 0.15);
+  border-top: 4px solid var(--color-accent-magenta);
+  padding: 2rem;
+  border-radius: 0 0 8px 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card h3 {
+  margin: 0 0 0.5rem 0;
+  color: var(--color-text-periwinkle);
+  font-size: 1.4rem;
+}
+
+.project-tags {
+  color: var(--color-accent-magenta);
+  font-size: 0.85rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.project-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.project-links a {
+  color: var(--color-bg-black);
+  background-color: var(--color-accent-blue);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.project-links a:hover {
+  background-color: var(--color-accent-magenta);
+}
+
+/* Certifications & Skills Styles */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.cert-card {
+  background-color: rgba(91, 42, 98, 0.15); /* Transparent Velvet Purple */
+  border-left: 4px solid var(--color-accent-blue);
+  padding: 1.5rem;
+  border-radius: 0 8px 8px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.cert-card h3 {
+  margin: 0 0 0.5rem 0;
+  color: var(--color-text-periwinkle);
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+.cert-issuer {
+  color: var(--color-accent-magenta);
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-bottom: 0.2rem;
+}
+
+.cert-date {
+  color: #A094B8;
+  font-size: 0.85rem;
+  margin-bottom: 1.2rem;
+  flex-grow: 1;
+}
+
+.cert-btn {
+  display: inline-block;
+  color: var(--color-bg-black);
+  background-color: var(--color-accent-blue);
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-align: center;
+  transition: background-color 0.3s;
+  align-self: flex-start;
+}
+
+.cert-btn:hover {
+  background-color: var(--color-accent-magenta);
+}
+
+.skills-section-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.skill-category h3 {
+  color: var(--color-text-periwinkle);
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.skill-tags-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.skill-pill {
+  background-color: var(--color-accent-blue);
+  color: var(--color-text-periwinkle);
+  padding: 0.5rem 1rem;
+  border-radius: 20px; /* Gives it that rounded pill shape */
+  font-size: 0.95rem;
+  font-weight: bold;
+  border: 1px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.skill-pill:hover {
+  border-color: var(--color-accent-magenta);
+}
+
+/* Contact Section Styles */
+.contact-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%; /* Stretches the buttons to match the container width */
+}
+
+.contact-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centers the icon and text in the middle of the wide button */
+  background-color: rgba(91, 42, 98, 0.15); 
+  border: 2px solid var(--color-accent-blue);
+  padding: 1.2rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--color-text-periwinkle);
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+  background-color: var(--color-accent-blue);
+  border-color: var(--color-accent-magenta);
+  transform: translateY(-2px);
+}
+
+.contact-icon {
+  width: 32px;
+  height: 32px;
+  margin-right: 1rem; /* Slightly reduced so the text feels perfectly centered */
+  fill: currentColor;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  
+  /* Stack the navigation */
+  .nav-container {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+
+  .nav-links a {
+    margin-left: 0.8rem;
+    margin-right: 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  /* Stack the Hero section */
+  #home {
+    flex-direction: column; /* Changed from column-reverse so the photo stays on top */
+    text-align: center;
+    padding-top: 2rem;
+  }
+
+  .hero-content {
+    padding-right: 0;
+    margin-top: 2rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-buttons {
+    justify-content: center; /* Centers the buttons under the text */
+  }
+
+  /* Adjust padding for mobile */
+  section {
+    padding: 3rem 0;
+  }
+
+  .experience-card {
+    padding: 1.5rem;
+  }
+
+  /* Fix for overflowing long email addresses */
+  .contact-btn {
+    padding: 1rem;
+    font-size: 1rem; /* Slightly smaller text for mobile */
+    word-break: break-word; /* Forces the long email text to wrap inside the box */
+  }
+
+  .contact-icon {
+    margin-right: 0.8rem;
+    min-width: 24px; /* Prevents the icon from squishing when the text wraps */
+  }
+}
